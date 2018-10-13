@@ -103,9 +103,16 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    pos = 0
+    for i in range(len(strings)):
+        if len(strings[pos]) > len(strings[i]):
+            pos = i
+    return strings[pos]
+
 
 
 def run_test_index_of_largest_number():
@@ -180,9 +187,15 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    pos = 0
+    for i in range(n):
+        if (numbers[pos]) < (numbers[i]):
+            pos = i
+    return pos
 
 
 # ----------------------------------------------------------------------
@@ -235,9 +248,15 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    count = 0
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
+            count += 1
+    return count
 
 
 def run_test_is_palindrome():
@@ -308,7 +327,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -317,6 +336,14 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+
+    test = ""
+    for i in range(len(s)-1,-1,-1):
+        test += s[i]
+    if test == s:
+        return True
+    else:
+        return False
 
 
 # ----------------------------------------------------------------------
@@ -378,6 +405,12 @@ def count_same(sequence1, sequence2):
     # TODO: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+    count = 0
+    for i in range(len(sequence1)):
+        if sequence1[i] == sequence2[i]:
+            count += 1
+    return count
 
 
 # ----------------------------------------------------------------------
